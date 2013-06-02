@@ -24,6 +24,7 @@ Summary: Qt 5.x IM plugin for fcitx
 URL: http://fcitx.googlecode.com/
 License: GPLv2
 Group: System/Internationalization
+BuildRequires: cmake
 BuildRequires: pkgconfig(fcitx) pkgconfig(fcitx-qt) pkgconfig(Qt5Core) pkgconfig(Qt5Gui) pkgconfig(Qt5Widgets) pkgconfig(Qt5DBus)
 
 %track
