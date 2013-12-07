@@ -5,7 +5,7 @@ Name: fcitx-qt5
 Version: 0.1.0
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 4
+Release: 5
 Source0: http://fcitx.googlecode.com/files/%{name}-%{version}.tar.xz
 %else
 Release: 0.%{scmrev}.1
