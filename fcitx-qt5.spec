@@ -52,9 +52,5 @@ export CMAKE_PREFIX_PATH=%_prefix/lib/qt5/%_lib/cmake/Qt5Core:%_prefix/lib/qt5/%
 %install
 %makeinstall_std -C build
 
-cd %buildroot
-mkdir -p .%_libdir/qt5
-mv plugins .%_libdir/qt5
-
 %files
 %_libdir/qt5/plugins/platforminputcontexts/*
