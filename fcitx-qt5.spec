@@ -56,4 +56,4 @@ export CMAKE_PREFIX_PATH=%_prefix/lib/qt5/%_lib/cmake/Qt5Core:%_prefix/lib/qt5/%
 %_libdir/qt5/plugins/platforminputcontexts/*
 %_includedir/fcitx-qt5/
 %_libdir/libfcitx-qt5.*
-%_libdir/pkg-config/fcitx-qt5.pc
+%_libdir/pkgconfig/fcitx-qt5.pc
