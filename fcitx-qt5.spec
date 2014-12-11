@@ -2,10 +2,10 @@
 %define scmrev %{nil}
 
 Name: fcitx-qt5
-Version: 0.1.1
+Version: 0.1.3
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 4
+Release: 1
 Source0: http://fcitx.googlecode.com/files/%{name}-%{version}.tar.xz
 %else
 Release: 0.%{scmrev}.1
@@ -24,8 +24,15 @@ Summary: Qt 5.x IM plugin for fcitx
 URL: http://fcitx.googlecode.com/
 License: GPLv2
 Group: System/Internationalization
-BuildRequires: cmake qmake5 qt5-devel
-BuildRequires: pkgconfig(fcitx) pkgconfig(fcitx-qt) pkgconfig(Qt5Core) pkgconfig(Qt5Gui) pkgconfig(Qt5Widgets) pkgconfig(Qt5DBus)
+BuildRequires: cmake
+BuildRequires: qmake5
+BuildRequires: qt5-devel
+BuildRequires: pkgconfig(fcitx)
+BuildRequires: pkgconfig(fcitx-qt)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5DBus)
 
 %track
 prog %{name} = {
@@ -35,7 +42,7 @@ prog %{name} = {
 }
 
 %description
-Qt 5.x IM plugin for fcitx
+Qt 5.x IM plugin for fcitx.
 
 %prep
 %if "%{scmrev}" == ""
