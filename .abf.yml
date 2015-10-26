@@ -1,5 +1,2 @@
-removed_sources:
-  fcitx-qt5-0.1.0.tar.xz: b13a11fd90a4b94b7342f2245cedf2b8d4f42983
-  fcitx-qt5-0.1.1.tar.xz: 384765da0416bd1adc7ffa61998ff115a0d049f7
 sources:
-  fcitx-qt5-0.1.3.tar.xz: ac9b4d6fe40b8a6df7b01a34d8bfb935f7339acd
+  fcitx-qt5-1.0.4.tar.xz: c7b12c0bd0666e62a2888e0dd9bb53e70871959a

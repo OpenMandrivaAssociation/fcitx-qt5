@@ -2,15 +2,14 @@
 %define scmrev %{nil}
 
 %define major 0
-%define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
 Name: fcitx-qt5
-Version: 0.1.3
+Version: 1.0.4
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
 Release: 2
-Source0: http://fcitx.googlecode.com/files/%{name}-%{version}.tar.xz
+Source0: http://download.fcitx-im.org/%{name}/%{name}-%{version}.tar.xz
 %else
 Release: 0.%{scmrev}.1
 Source0: %{name}-%{scmrev}.tar.xz
@@ -37,7 +36,6 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5DBus)
-Requires:	%{libname} = %{EVRD}
 
 %track
 prog %{name} = {
@@ -49,18 +47,11 @@ prog %{name} = {
 %description
 Qt 5.x IM plugin for fcitx.
 
-%package -n %{libname}
-Summary:	Main library for %{name}
-Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
-
-%description -n %{libname}
-Main library for %{name}.
-
 %package -n %{develname}
 Summary:	Development files for %{name}
 Group:		Development/C++
-Requires:	%{libname} = %{EVRD}
+Requires:	%mklibname FcitxQt5DBusAddons 1
+Requires:	%mklibname FcitxQt5WidgetsAddons 1
 
 %description -n %{develname}
 Development files and headers library for %{name}.
@@ -83,10 +74,12 @@ export CMAKE_PREFIX_PATH=%_prefix/lib/qt5/%_lib/cmake/Qt5Core:%_prefix/lib/qt5/%
 %files
 %{_libdir}/qt5/plugins/platforminputcontexts/*
 
-%files -n %{libname}
-%{_libdir}/lib*fcitx-qt5.so.%{major}*
+%libpackage FcitxQt5DBusAddons 1
+
+%libpackage FcitxQt5WidgetsAddons 1
 
 %files -n %{develname}
-%{_includedir}/fcitx-qt5/
-%{_libdir}/lib*fcitx-qt5.so
-%{_libdir}/pkgconfig/fcitx-qt5.pc
+%{_includedir}/FcitxQt5
+%{_libdir}/lib*.so
+%{_libdir}/cmake/FcitxQt5DBusAddons
+%{_libdir}/cmake/FcitxQt5WidgetsAddons
