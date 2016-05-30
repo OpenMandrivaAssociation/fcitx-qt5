@@ -1,32 +1,14 @@
-%define beta %{nil}
-%define scmrev %{nil}
-
 %define major 0
 %define develname %mklibname %{name} -d
 
-Name: fcitx-qt5
-Version: 1.0.4
-%if "%{beta}" == ""
-%if "%{scmrev}" == ""
-Release: 2
-Source0: http://download.fcitx-im.org/%{name}/%{name}-%{version}.tar.xz
-%else
-Release: 0.%{scmrev}.1
-Source0: %{name}-%{scmrev}.tar.xz
-%endif
-%else
-%if "%{scmrev}" == ""
-Release: 0.%{beta}.1
-Source0: %{name}-%{version}%{beta}.tar.bz2
-%else
-Release: 0.%{beta}.0.%{scmrev}.1
-Source0: %{name}-%{scmrev}.tar.xz
-%endif
-%endif
 Summary: Qt 5.x IM plugin for fcitx
+Name: fcitx-qt5
+Version: 1.0.5
+Release: 1
 URL: http://fcitx.googlecode.com/
 License: GPLv2
 Group: System/Internationalization
+Source0: http://download.fcitx-im.org/%{name}/%{name}-%{version}.tar.xz
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: qt5-devel
@@ -57,11 +39,7 @@ Requires:	%mklibname FcitxQt5WidgetsAddons 1
 Development files and headers library for %{name}.
 
 %prep
-%if "%{scmrev}" == ""
-%setup -q -n %{name}-%{version}%{beta}
-%else
-%setup -q -n %{name}
-%endif
+%setup -q
 
 %build
 export CMAKE_PREFIX_PATH=%_prefix/lib/qt5/%_lib/cmake/Qt5Core:%_prefix/lib/qt5/%_lib/cmake/Qt5Gui:%_prefix/lib/qt5/%_lib/cmake/Qt5Widgets:%_prefix/lib/qt5/%_lib/cmake/Qt5DBus
