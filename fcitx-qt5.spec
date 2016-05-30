@@ -9,15 +9,14 @@ URL: http://fcitx.googlecode.com/
 License: GPLv2
 Group: System/Internationalization
 Source0: http://download.fcitx-im.org/%{name}/%{name}-%{version}.tar.xz
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: qt5-devel
+BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(fcitx)
 BuildRequires: pkgconfig(fcitx-qt)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(xkbcommon)
 
 %track
 prog %{name} = {
