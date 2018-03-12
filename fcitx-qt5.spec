@@ -3,7 +3,7 @@
 
 Summary: Qt 5.x IM plugin for fcitx
 Name: fcitx-qt5
-Version: 1.0.6
+Version: 1.2.2
 Release: 1
 URL: http://fcitx.googlecode.com/
 License: GPLv2
@@ -48,8 +48,12 @@ export CMAKE_PREFIX_PATH=%_prefix/lib/qt5/%_lib/cmake/Qt5Core:%_prefix/lib/qt5/%
 %install
 %makeinstall_std -C build
 
-%files
+%find_lang %{name} --all-name
+
+%files -f %{name}.lang
 %{_libdir}/qt5/plugins/platforminputcontexts/*
+%{_libdir}/fcitx/libexec/fcitx-qt5-gui-wrapper
+%{_libdir}/fcitx/qt/*.so
 
 %libpackage FcitxQt5DBusAddons 1
 
