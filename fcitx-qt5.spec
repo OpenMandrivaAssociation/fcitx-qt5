@@ -19,13 +19,6 @@ BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(xkbcommon)
 
-%track
-prog %{name} = {
-	url = http://code.google.com/p/fcitx/downloads/list
-	regex = %name-(__VER__)\.tar\.xz
-	version = %{version}
-}
-
 %description
 Qt 5.x IM plugin for fcitx.
 
