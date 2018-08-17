@@ -3,7 +3,7 @@
 
 Summary: Qt 5.x IM plugin for fcitx
 Name: fcitx-qt5
-Version: 1.2.2
+Version: 1.2.3
 Release: 1
 URL: http://fcitx.googlecode.com/
 License: GPLv2
@@ -11,7 +11,6 @@ Group: System/Internationalization
 Source0: http://download.fcitx-im.org/%{name}/%{name}-%{version}.tar.xz
 BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(fcitx)
-BuildRequires: pkgconfig(fcitx-qt)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Concurrent)
 BuildRequires: pkgconfig(Qt5Gui)
