@@ -4,7 +4,7 @@
 Summary: Qt 5.x IM plugin for fcitx
 Name: fcitx-qt5
 Version:	1.2.7
-Release:	3
+Release:	4
 URL: http://fcitx.googlecode.com/
 License: GPLv2
 Group: System/Internationalization
